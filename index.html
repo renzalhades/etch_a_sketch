@@ -9,7 +9,7 @@
     <title>Etch A Sketch</title>
 </head>
 
-<body id="body-content">
+<body>
 
     <header id="header-content">
         <h1>ETCH A SKETCH</h1>
@@ -18,11 +18,25 @@
     <main id="main-content">
         
         <div class="settings">
-            <input class = "color-picker" type="color" >
-            <input class = "grid-size-setting" type="range">
-            <button class="eraser-setting">Erase</button>
-            <button class="rainbow-setting">Raibow</button>
-            <button class="clean-setting">Clean</button >
+            <div class="color-picker">
+                <input class = "brush" type="color" value="#000000" >
+                <input class = "pad" type="color" value="#ffffff">
+            </div>
+
+            <div class="grid-setting">
+                <input class = "grid-size-setting" type="range"  min="10" max="100" value="5">
+                <div class="grid-size-value"> </div>
+            </div>
+
+            <div class="btn-setting">
+                <button class="line-setting">Grid Line</button >
+                <button class="eraser-setting">Erase</button>
+                <button class="rainbow-setting">Raibow</button>
+                <button class="clean-setting">Clean</button >
+            </div>
+
+
+            
 
 
         </div>
