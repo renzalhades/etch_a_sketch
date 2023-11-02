@@ -35,6 +35,7 @@ function setGridSize (size) {
     for (let x=1; x <area+1; x++) {
         gridCreate = document.createElement ('div');
         gridCreate.classList.add ('grid');
+        gridCreate.style.backgroundColor = 'none';
         gridContainer.appendChild (gridCreate);
     }
 }
@@ -49,7 +50,7 @@ function paint (e) {
                 break;
             }
             case (eraser.classList.contains('active')): {
-                paint= padColor;
+                paint= '';
                 break;
             }
             default: {
@@ -58,12 +59,11 @@ function paint (e) {
             }
         }
         e.target.style.backgroundColor = paint;
-        console.log (paint);
+        console.log (e.target);
     }  
 }
 
 function cleanGrid () {
-    const gridContainer = document.querySelector ('.board');
     gridContainer.innerHTML = '';
     setGridSize (size);
 }
@@ -77,7 +77,6 @@ function updateGridSize (e) {
 function updateGridColor (e) {
     padColor = e.target.value;
     gridContainer.style.setProperty ('--padColor', padColor);
-    cleanGrid ()
     return padColor;
 }
 

@@ -217,6 +217,7 @@ main#main-content {
 .board {
     margin: 0, 2em;
     width: 90vw;
+    max-width: 600px;
 }
 
 .settings {
