@@ -5,7 +5,7 @@ let mouseDown = false;
 let size = 10;
 let rainbowCounter =0;
 
-const rainbowColor =['red', 'orange', 'yellow', 'green', 'blue', 'violet']
+const rainbowColor =['red', 'orange', 'yellow', 'green', 'blue', 'indigo', 'violet']
 const brushColorSelect = document.querySelector ('.brush');
 const padColorSelect = document.querySelector ('.pad');
 const gridSize = document.querySelector ('.grid-size-setting');
@@ -44,8 +44,8 @@ function paint (e) {
     if (e.type === 'mouseover' && mouseDown) { 
         switch (true) {
             case (rainbow.classList.contains('active')): {
-                paint = rainbowColor [rainbowCounter%8];
-                rainbowCounter++
+                paint = rainbowColor [rainbowCounter%7];
+                rainbowCounter++;
                 break;
             }
             case (eraser.classList.contains('active')): {
@@ -79,7 +79,6 @@ function updateGridColor (e) {
     gridContainer.style.setProperty ('--padColor', padColor);
     cleanGrid ()
     return padColor;
-    
 }
 
 function toggleMode (e) {
@@ -97,7 +96,6 @@ function toggleMode (e) {
             rainbow.classList.toggle ('active');
         }
 }
-    
 
 setGridSize (size);
 
